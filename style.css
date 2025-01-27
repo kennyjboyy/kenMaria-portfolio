@@ -1,0 +1,1148 @@
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --text-black-900: white;
+    --text-black-700: #ccc;
+    --skin-color: hotpink;
+    --bg-black-100: #222;
+    --bg-black-50: #333;
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Poppins, sans-serif';
+}
+.html, body {
+    height: 100%;
+    width: 100%;
+    background: black;  /* Ensure the background is black */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+.navbar{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    padding: 25px 9%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    animation: show-content 1.5s linear forwards;
+    animation-delay: 1.2s;
+}
+    @keyframes show-content{
+        100%{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+.navbar .logo{
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Clicker Script', cursive;
+}
+.navbar .logo a span{
+    font-family: 'Clicker Script', cursive;
+   
+}
+.navbar ul{
+    display: flex;
+}
+.navbar ul li{
+    list-style: none;
+    margin-left: 30px;
+}
+.navbar ul li a{
+    font-size: 20px;
+    font-weight: 500;
+    transition: .5s;
+}
+.navbar ul li:hover a,
+.navbar ul li.active a
+{
+    color:hotpink;
+}
+.home{
+display: flex;
+align-items: center;
+gap: 3px;
+height: 100vh;
+padding: 60px 9% 0;
+color: #fff;
+visibility: hidden;
+    opacity: 0;
+    animation: show-content 1.5s linear forwards;
+    animation-delay: 1.6s;
+
+}
+.home-info h1{
+    font-size: 55px;
+}
+home-info h2{
+    display: inline-block;
+    font-size: 32px;
+    margin-top: -10px;
+}
+.home-info h2 span {
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: 0.7px hotpink;
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: fadeInOut 10s linear infinite;
+    animation-delay: calc(-4s * var(--i));
+}
+/* Neon Glow Effect */
+.home-info h2 span:hover {
+    text-shadow: 0 0 8px hotpink, 0 0 20px rgba(255, 20, 147, 0.8);
+}
+/* Typing Effect */
+.home-info h2 span::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0%;
+    color: hotpink;
+    border-right: 2px solid hotpink;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(12) forwards, blinkCursor 0.8s infinite;
+}
+/* Typing Animation */
+@keyframes typing {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+/* Blinking Cursor */
+@keyframes blinkCursor {
+    50% { border-right: 2px solid transparent; }
+}
+/* Smooth Fade In and Out */
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; transform: translateY(10px); }
+    25%, 75% { opacity: 1; transform: translateY(0); }
+}
+.home-info p{
+    font-size: 16px;
+    margin: 10px 0 25px;
+}
+.home-info .btn-sci{
+    display: flex;
+    align-items: center;
+}
+.home-info .btn-sci .sci{
+    margin-left: 20px;
+}
+.home-info .btn-sci .sci a{
+    display: inline-flex;
+    padding: 8px;
+    border: 2px solid hotpink;
+    border-radius: 50%;
+    font-size: 20px;
+    color: hotpink;
+    margin: 0 8px;
+    transition: .5s;
+}
+.home-info .btn-sci .sci a:hover{
+    background: hotpink;
+    color: black;
+    box-shadow: 0 0 10px hotpink;
+}
+.home-img .img-box{
+    position: relative;
+    width: 32vw;
+    height: 32vw;
+  
+    padding: 5px;
+    display: flex;
+    border-radius: 1000px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.home-img .img-box {
+    position: relative;
+}
+
+.home-img .img-box::before,
+.home-img .img-box::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(transparent, transparent, transparent, red);
+    transform: rotate(0deg);
+    animation: rotate-border 10s linear infinite; 
+}
+.home-img .img-box::after{
+    animation-delay: -5s;
+}
+
+@keyframes rotate-border { 
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.home-img .img-box .img-item{
+    position: relative;
+width: 100%;
+height: 100%;
+background: black;
+border-radius: 50%;
+border: 1px solid black;
+display: flex;
+justify-content: center;
+overflow: hidden;
+z-index: 1;
+}
+.home-img .img-box .img-item img{
+    position: absolute;
+    top: 30px;
+    display: block;
+    width: 85%;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+}
+.home1{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 3rem;
+  
+    height: 100vh;
+    padding: 60px 9% 0;
+    color: #fff;
+    visibility: hidden;
+        opacity: 0;
+        animation: show-content 1.5s linear forwards;
+        animation-delay: 1.6s;
+    
+    }
+    .home-info1 h1{
+        font-size: 55px;
+    }
+    home-info h2{
+        display: inline-block;
+        font-size: 32px;
+        margin-top: -10px;
+    }
+    .home-info1 h2 span {
+        display: inline-block;
+        color: transparent;
+        -webkit-text-stroke: 0.7px hotpink;
+        position: relative;
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        animation: fadeInOut 10s linear infinite;
+        animation-delay: calc(-4s * var(--i));
+    }
+    
+    /* Neon Glow Effect */
+    .home-info1 h2 span:hover {
+        text-shadow: 0 0 8px hotpink, 0 0 20px rgba(255, 20, 147, 0.8);
+    }
+    
+    /* Typing Effect */
+    .home-info1 h2 span::before {
+        content: attr(data-text);
+        position: absolute;
+        width: 0%;
+        color: hotpink;
+        border-right: 2px solid hotpink;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 4s steps(12) forwards, blinkCursor 0.8s infinite;
+    }
+    
+    /* Typing Animation */
+    @keyframes typing {
+        0% { width: 0%; }
+        100% { width: 100%; }
+    }
+    /* Blinking Cursor */
+    @keyframes blinkCursor {
+        50% { border-right: 2px solid transparent; }
+    }
+    /* Smooth Fade In and Out */
+    @keyframes fadeInOut {
+        0%, 100% { opacity: 0; transform: translateY(10px); }
+        25%, 75% { opacity: 1; transform: translateY(0); }
+    }
+    .bars-animation{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        z-index: -1;
+    }
+    .bars-animation .bars{
+        width: 100%;
+        height: 100%;
+        background: black;
+        transform: translateY(-100%);
+        animation: show-bars .5s ease-in-out forwards;
+        animation-delay: calc(.1s * var(--i));
+    }
+    @keyframes show-bars{
+        100%{
+            transform: translateY(0%);
+        }
+    }
+    .home-info1 p{
+        font-size: 16px;
+        margin: 10px 0 25px;
+    }
+    .home-info1 .btn-sci1{
+        display: flex;
+        align-items: center;
+    }
+    .home-info1 .btn-sci1 .sci1{
+        margin-left: 20px;
+    }
+    .home-info1 .btn-sci1 .sci1 a{
+        display: inline-flex;
+        padding: 8px;
+        border: 2px solid hotpink;
+        border-radius: 50%;
+        font-size: 20px;
+        color: hotpink;
+        margin: 0 8px;
+        transition: .5s;
+    }
+    .home-info1 .btn-sci1 .sci1 a:hover{
+        background: hotpink;
+        color: black;
+        box-shadow: 0 0 10px hotpink;
+    }
+    .home-img1 .img-box1{
+        position: right;
+        width: 32vw;
+        height: 32vw;
+        padding: 5px;
+        display: flex;
+        border-radius: 1000px;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    .home-img1 .img-box1 {
+        position: relative;
+    }
+    
+    .home-img1 .img-box1::before,
+    .home-img1 .img-box1::after {
+        content: '';
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: conic-gradient(transparent, transparent, transparent, pink);
+        transform: rotate(0deg);
+        animation: rotate-border 10s linear infinite; 
+    }
+    .home-img1 .img-box1::after{
+        animation-delay: -5s;
+    }
+    @keyframes rotate-border { 
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    .home-img1 .img-box1 .img-item1{
+        position: relative;
+    width: 100%;
+    height: 100%;
+    background: black;
+    border-radius: 50%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+    }
+    .home-img1 .img-box1 .img-item1 img{
+        position: absolute;
+        top: 30px;
+        display: block;
+        width: 85%;
+        object-fit: cover;
+        mix-blend-mode: lighten;
+    }
+.bars-animation1{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: -1;
+}
+.bars-animation1 .bars1{
+    width: 100%;
+    height: 100%;
+    background: black;
+    transform: translateY(-100%);
+    animation: show-bars .5s ease-in-out forwards;
+    animation-delay: calc(.1s * var(--i));
+}
+@keyframes show-bars{
+    100%{
+        transform: translateY(0%);
+    }
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px 5%;
+    }
+
+    .home {
+        flex-direction: column; /* Stack content vertically */
+        height: auto; /* Allow height to adjust */
+        padding: 30px 5%; /* Adjust padding */
+    }
+
+    .home-info h1 {
+        font-size: 40px; /* Decrease heading size */
+    }
+
+    .home-info h2 {
+        font-size: 24px; /* Decrease subheading size */
+    }
+
+    .home-img .img-box {
+        width: 60vw; /* Adjust image size */
+        height: 60vw; /* Adjust image size */
+    }
+    .home1 {
+        flex-direction: column; /* Stack content vertically */
+        height: auto; /* Allow height to adjust */
+        padding: 30px 5%; /* Adjust padding */
+    }
+
+    .home-info1 h1 {
+        font-size: 40px; /* Decrease heading size */
+    }
+
+    .home-info1 h2 {
+        font-size: 24px; /* Decrease subheading size */
+    }
+
+    .home-img1 .img-box1 {
+        width: 80vw; /* Adjust image size */
+        height: 80vw; /* Adjust image size */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar ul li {
+        margin-left: 15px; /* Decrease margin */
+    }
+
+    .home-info h1 {
+        font-size: 30px; /* Further decrease heading size */
+    }
+
+    .home-info h2 {
+        font-size: 20px; /* Further decrease subheading size */
+    }
+
+    .home-info p {
+        font-size: 14px; /* Decrease paragraph size */
+    }
+
+    .home-img .img-box {
+        width: 80vw; /* Adjust image size */
+        height: 80vw; /* Adjust image size */
+    }
+}
+/* About Section */
+.section-title h2 {
+    font-size: 2em; /* Adjust size as needed */
+    color: white;   /* Ensure the color contrasts with the background */
+    margin-bottom: 20px; /* Add space below the heading */
+    margin: 30px 0 30px 30px;
+    text-align: center;
+    justify-content: center;
+}
+.about .about-content
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.about .about-content .about-img .img3 {
+    width: 300px;               /* Desired width */
+    height: 300px;              /* Desired height */
+    border-radius: 50%;         /* Make it circular */
+    border: 2px solid yellowgreen;  /* Optional: Add a border */
+    overflow: hidden;           /* Prevent overflow */
+    margin-left: 250px;
+    margin-top: 40px;
+}
+.about .about-content .about-img .img3 img {
+    width: 100%;                /* Ensure image fills the box */
+    height: 100%;               /* Ensure image fills the box */
+    object-fit: cover;          /* Maintain aspect ratio */
+}
+.about .about-content .about-text
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    gap: 3rem;
+}
+.about .about-content .about-text h3
+{
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: var(--text-black-900);
+    text-align: center;  
+}
+.about .about-content .about-text h3 span
+{
+    color: var(--skin-color);
+}
+.about .about-content .about-text p
+{
+    font-size: 16px;
+    line-height: 30px;
+    color: var(--text-black-700);
+    text-align: center;
+}
+.about .about-content .personal-info
+{
+    flex: 0 0 60%;
+    max-width: 60%;
+    margin-top: -300px;  
+}
+.about .about-content .personal-info .info-item
+{
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-left: 600px;
+    text-align: 3%;   
+}
+.about .about-content .personal-info .info-item p
+{
+    font-weight: 600;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--text-black-900);
+}
+.about .about-content .personal-info .info-item p span
+{
+    font-weight: 400;
+    color: var(--text-black-700);
+    margin-left: 4px;
+     display: inline-block; 
+}
+.about .about-content .personal-info .buttons
+{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.about .about-content .education 
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 180px;   
+}
+.about .about-content h3.title
+{
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: var(--text-black-900);
+}
+.about .about-content .timeline-box
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.about .about-content .timeline
+{
+    background-color: var(--bg-black-100);
+    padding: 30px 15px;
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+}
+.about .about-content .timeline .timeline-item
+{
+    position: relative;
+    padding-left: 37px;
+    padding-bottom: 50px; 
+}
+.about .about-content .timeline .timeline-item:last-child
+{
+    padding-bottom: 0;
+}
+.about .about-content .timeline .timeline-item::before
+{
+    content: '';
+    width: 1px;
+    position: absolute;
+    height: 100%;
+    left: 7px;
+    top: 0;
+    background-color: var(--skin-color);
+}
+.about .about-content .timeline .circle-dot
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: var(--skin-color);
+}
+.about .about-content .timeline .timeline-date
+{
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: var(--text-black-900);
+}
+.about .about-content .timeline .timeline-date .fa
+{
+    margin-top: 5px;
+}
+.about .about-content .timeline .timeline-title
+{
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    color: var(--text-black-900);
+}
+.about .about-content .timeline .timeline-text
+{
+    line-height: 25px;
+    font-size: 16px;
+    text-align: justify;
+    color: var(--text-black-700);
+}
+.about-text-bottom-center {
+    text-align: center;      /* Center align text */
+    margin-top: 80px;       /* Space above the text */
+    margin-bottom: 20px;     /* Space below the text */
+}
+
+.about-text-bottom-center h3 {
+    font-size: 24px;         /* Adjust font size */
+    color: white;             /* Change h3 color */
+}
+
+.about-text-bottom-center p {
+    font-size: 16px;         /* Set paragraph font size */
+    color: white;             /* Change paragraph color */
+    line-height: 1.5;        /* Improve readability */
+}
+.info-image-container {
+    display: flex; 
+    align-items: flex-start; /* Aligns items at the top */
+    margin-top: 100px;       /* Space above the container */
+}
+.new-image-container {
+    display: flex; 
+    justify-content: flex-end; /* Aligns image to the right */
+    margin-top: 20px;         /* Space above the image */
+    margin-right: 150px;
+    margin-left: 50px;
+}
+.about-img .img4 {
+    width: 300px;              /* Set the desired width */
+    height: 300px;             /* Set the desired height */
+    border-radius: 50%;        /* Make it circular (optional) */
+    overflow: hidden;          /* Prevent overflow */
+    border: 2px solid rgb(241, 47, 186);
+}           
+.about-img .img4 img {
+    width: 100%;               /* Ensure image fills the box */
+    height: 100%;              /* Ensure image fills the box */
+    object-fit: cover;         /* Maintain aspect ratio */
+}
+.about .about-content .personal-infos {
+    flex: 0 0 60%;
+    max-width: 60%;
+    margin: 0 auto 100px; /* Center the container */
+    text-align: center; /* Center text inside the container */
+}
+
+.about .about-content .personal-infos .info-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin: 0 auto; /* Center individual info items */
+    text-align: center; /* Center text within each item */
+}
+
+.about .about-content .personal-infos .info-item p {
+    font-weight: 600;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--text-black-900);
+    text-align: center;
+}
+.about .about-content .personal-infos .about-text-bottom-center p span 
+    /* Your styles */
+ {
+    font-weight: 400;
+    color: var(--text-black-700);
+    margin-left: 4px;
+    display: inline-block; 
+}
+
+.about .about-content .personal-infos .buttons {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.about .about-content .educations 
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 100px;
+   
+}
+.about .about-content h3.title
+{
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: var(--text-black-100);
+}
+.about .about-content .timelines-box
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.about .about-content .timelines
+{
+    background-color: var(--bg-black-100);
+    padding: 30px 15px;
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+}
+.about .about-content .timelines .timeline-item
+{
+    position: relative;
+    padding-left: 37px;
+    padding-bottom: 50px; 
+}
+.about .about-content .timelines .timeline-item:last-child
+{
+    padding-bottom: 0;
+}
+.about .about-content .timelines .timeline-item::before
+{
+    content: '';
+    width: 1px;
+    position: absolute;
+    height: 100%;
+    left: 7px;
+    top: 0;
+    background-color: var(--skin-color);
+}
+.about .about-content .timelines .circle-dot
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: var(--skin-color);
+}
+.about .about-content .timelines .timeline-date
+{
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: var(--text-black-700);
+}
+.about .about-content .timelines .timeline-date .fa
+{
+    margin-top: 5px;
+}
+.about .about-content .timelines .timeline-title
+{
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    color: var(--text-black-900);
+}
+.about .about-content .timelines h4{
+    color: var(--text-black-900);
+}
+.about .about-content .timelines .timeline-text
+{
+    line-height: 25px;
+    font-size: 16px;
+    text-align: justify;
+    color: var(--text-black-700);
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .section-title h2 {
+        font-size: 1.5em; /* Smaller heading size */
+    }
+
+    .about .about-content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align */
+    }
+
+    .about .about-content .about-img .img3 {
+        width: 200px; /* Smaller width for image */
+        height: 200px; /* Smaller height for image */
+        margin: 0 auto; /* Center image */
+    }
+
+    .about .about-content .personal-info {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 20px; /* Adjust margin */
+    }
+
+    .about .about-content .personal-info .info-item {
+        flex: 0 0 100%; /* Full width for items */
+        max-width: 100%;
+        margin: 10px 0; /* Space between items */
+    }
+
+    .about .about-content h3.title {
+        font-size: 20px; /* Smaller title size */
+    }
+
+    .about-text-bottom-center h3 {
+        font-size: 20px; /* Smaller heading size */
+    }
+
+    .about-text-bottom-center p {
+        font-size: 14px; /* Smaller paragraph size */
+    }
+
+    .info-image-container {
+        flex-direction: column; /* Stack images vertically */
+        align-items: center; /* Center images */
+        margin-top: 50px; /* Reduce top margin */
+    }
+
+    .new-image-container {
+        margin-right: 0; /* Remove right margin */
+        margin-left: 0;  /* Remove left margin */
+        justify-content: center; /* Center the image */
+        display: flex; /* Ensure it's a flex container */
+    }
+
+    .about-img .img4 {
+        width: 200px; /* Adjust image size for smaller screens */
+        height: 200px; /* Adjust image size for smaller screens */
+        margin: 0 auto; /* Center the image */
+        display: block; /* Ensure it behaves as a block element */
+    }
+
+    .about .about-content .personal-infos {
+        flex: 0 0 100%; /* Full width */
+        max-width: 100%; /* Full width */
+        margin-bottom: 50px; /* Adjust bottom margin */
+    }
+
+    .about .about-content .personal-infos .info-item {
+        flex: 0 0 100%; /* Full width on smaller screens */
+        max-width: 100%; /* Full width */
+        margin-bottom: 20px; /* Space between items */
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title h2 {
+        font-size: 1.2em; /* Further reduce size */
+    }
+
+    .about .about-content .about-text h3 {
+        font-size: 20px; /* Smaller heading size */
+    }
+
+    .about .about-content .about-text p {
+        font-size: 14px; /* Smaller paragraph size */
+    }
+
+    .about-img .img4 {
+        width: 200px; /* Adjust image size for smaller screens */
+        height: 200px; /* Adjust image size for smaller screens */
+        margin: 20px auto; /* Center the image */
+        display: block; /* Ensure it behaves as a block element */
+    }
+
+    .about .about-content .personal-info .info-item p {
+        font-size: 14px; /* Smaller info item size */
+    }
+
+    .about-text-bottom-center h3 {
+        font-size: 18px; /* Further reduce heading size */
+    }
+
+    .about-text-bottom-center p {
+        font-size: 12px; /* Further reduce paragraph size */
+    }
+
+    .about .about-content .personal-infos .info-item p {
+        font-size: 14px; /* Smaller info item size */
+    }
+}
+.portfolio-grid {
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Space items evenly */
+    align-items: stretch; /* Stretch items to the same height */
+}
+.portfolio .section-title h2{
+    margin: 80px 0 30px 30px;
+}
+.portfolio-heading h2 {
+    font-size: 1.8em; /* Increase font size */
+    color: var(--text-black-900); /* Set a dark color for visibility */
+    font-weight: bold; /* Make the font bold */
+    letter-spacing: 1px; /* Optional: add space between letters */
+    margin: 30px 0 50px 30px;
+}
+.portfolio-item {
+    flex: 0 0 30%; /* Adjust to 30% width for 3 items per row with some space */
+    max-width: 30%; /* Ensure max width */
+    margin: 10px; /* Margin around items */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.portfolio-img {
+    height: 200px; /* Set a fixed height for uniformity */
+    overflow: hidden; /* Crop overflow content */
+    margin-bottom: 50px;
+}
+
+.portfolio-img img {
+    width: 100%; /* Make the image responsive */
+    height: 100%; /* Make the image fill the height */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    border-radius: 8px; /* Rounded corners for a softer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.portfolio-img img:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.portfolio-item-inner {
+    padding: 10px; /* Inner padding for aesthetics */
+    background-color: #f8f8f8; /* Soft background color */
+    border-radius: 10px; /* Rounded corners for the item */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow effect for the box */
+    text-align: center; /* Center text alignment */
+}
+
+.portfolio-description {
+    margin-top: 10px; /* Space between image and text */
+}
+
+.portfolio-description h3 {
+    font-size: 1.2em; /* Title size */
+    margin-bottom: 5px; /* Space below title */
+}
+
+.portfolio-description p {
+    font-size: 0.9em; /* Description size */
+    color: #555; /* Description color */
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .portfolio-item {
+        flex: 0 0 45%; /* 2 items per row on medium screens */
+        max-width: 45%; /* Ensure max width */
+    }
+}
+@media (max-width: 480px) {
+    .portfolio-item {
+        flex: 0 0 100%; /* 1 item per row on small screens */
+        max-width: 100%; /* Ensure max width */
+        margin-bottom: 20px; /* Add spacing between items */
+    }
+
+    .portfolio-img {
+        height: auto; /* Allow height to adjust for better aspect ratio */
+    }
+}
+/* contact section */
+.contact-title {
+    color: var(--skin-color);
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.contact .section-title h2 {
+    margin: 100px 0 50px 30px;
+}
+.contact-subtitle {
+    color: var(--text-black-900);
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 60px;
+}
+
+.contact .row {
+    display: flex; /* Use flexbox for the row */
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap if necessary */
+    margin-bottom: 60px; /* Added space below the row */
+}
+
+.contact .contact-info-item {
+    flex: 1 0 200px; /* Grow and allow a minimum width */
+    max-width: 33.33%; /* Ensure items are not too wide */
+    text-align: center; /* Center text for each item */
+    margin: 15px; /* Margin around items for spacing */
+}
+
+.contact .contact-info-item .icon {
+    display: inline-block;
+}
+
+.contact .contact-info-item .icon .fa {
+    font-size: 25px; /* Icon size */
+    color: var(--skin-color); /* Icon color */
+}
+
+.contact .contact-info-item h4 {
+    font-size: 18px; /* Heading size */
+    font-weight: 700; /* Bold heading */
+    color: var(--text-black-900); /* Heading color */
+    text-transform: capitalize; /* Capitalize heading */
+    margin: 15px 0 5px; /* Margin around heading */
+}
+
+.contact .contact-info-item p {
+    font-size: 16px; /* Paragraph size */
+    line-height: 25px; /* Line height for readability */
+    color: var(--text-black-700); /* Paragraph color */
+    font-weight: 400; /* Normal weight for paragraph */
+}
+/* Contact form container styles */
+.contact .contact-form {
+    flex: 0 0 80%; /* Allow form to take up 80% of the available width */
+    max-width: 80%; /* Set maximum width to 80% */
+}
+
+/* Styles for columns within the contact form */
+.contact .contact-form .col-6 {
+    flex: 0 0 50%; /* Each column takes up 50% of the form width */
+    max-width: 50%; /* Ensure maximum width is 50% */
+    text-align: center; /* Center align text within the column */
+    justify-content: center; /* Center content horizontally */
+}
+
+.contact .contact-form .col-12 {
+    flex: 0 0 100%; /* Full width for this column */
+    max-width: 100%; /* Maximum width is 100% */
+}
+
+/* Styles for individual form items */
+.contact .contact-form .form-item {
+    margin-bottom: 30px; /* Margin below each form item for spacing */
+}
+
+/* Styles for form input fields */
+.contact .contact-form .form-item .form-control {
+    height: 50px; /* Set a fixed height for input fields */
+    width: 100%; /* Make input fields take the full width of their container */
+    border-radius: 25px; /* Rounded corners for a softer look */
+    background: var(--bg-black-100); /* Background color of the input fields */
+    border: 1px solid var(--bg-black-50); /* Border color for the input fields */
+    padding: 10px 25px; /* Padding inside the input fields */
+    font-size: 16px; /* Font size for input text */
+    color: var(--text-black-700); /* Text color inside the input fields */
+    transition: all 0.3s ease; /* Transition effect for focus state */
+}
+
+/* Styles for focused input fields */
+.contact .contact-form .form-item .form-control:focus {
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15); /* Shadow effect when input is focused */
+}
+
+/* Styles for textarea elements */
+.contact .contact-form .form-item textarea.form-control {
+    height: 140px; /* Set a fixed height for textareas */
+}
+
+/* Styles for the submit button */
+.contact .contact-form .btn {
+    height: 50px; /* Set a fixed height for the button */
+    padding: 0 50px; /* Horizontal padding for the button */
+    border-radius: 25px; /* Rounded corners for the button */
+    background-color: var(--skin-color); /* Background color of the button */
+    color: var(--bg-black-100); /* Text color of the button */
+    margin-top: -100px; /* Negative margin to adjust button positioning */
+}
+.footer {
+    background-color: var(--bg-black-100);
+    color: var(--text-black-700);
+    padding: 40px 0; /* Padding for the footer */
+    text-align: center; /* Center text in the footer */
+}
+
+.footer h4 {
+    margin-bottom: 20px; /* Space below heading */
+    font-size: 24px; /* Font size for the heading */
+}
+
+.social-links {
+    display: flex; /* Use flexbox for the social links */
+    justify-content: center; /* Center the items */
+    margin-top: 10px; /* Space above the icons */
+}
+
+.social-item {
+    margin: 0 20px; /* Space between social items */
+}
+
+.social-icon {
+    display: block; /* Make the icon a block element */
+    margin-bottom: 10px; /* Space below the icon */
+    font-size: 28px; /* Icon size */
+    color: var(--skin-color); /* Icon color */
+    transition: color 0.3s; /* Transition effect on hover */
+}
+
+.social-icon:hover {
+    color: var(--text-black-900); /* Change color on hover */
+}
+
+.social-item p {
+    margin: 0; /* Remove default margin */
+    font-size: 14px; /* Font size for account names */
+    color: var(--text-black-700); /* Color for account names */
+}
+@media(max-width:767px)
+{
+    .contact .contact-form col-6,
+    .contact .contact-info-item,
+    .about .about-content .educations
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
